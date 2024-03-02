@@ -40,7 +40,7 @@ export const hallBooking = async (req, res) => {
 export const hallList = async (req, res) => {
   const { date } = req.body;
   try {
-    const BookedList = await BookingHall.findOne({ date });
+    const BookedList = await BookingHall.find({ date });
     res.status(200).json({ BookedList });
   } catch (error) {
     res.status(500).json(error)
@@ -51,8 +51,8 @@ export const hallList = async (req, res) => {
 export const customersList = async (req, res) => {
   const { date } = req.body;
   try {
-    const BookedList = await BookingHall.findOne({ date });
-    res.status(200).json({ BookedList });
+    const customersList = await BookingHall.find({ date });
+    res.status(200).json({ customersList });
   } catch (error) {
     res.status(500).json(error);
   }
